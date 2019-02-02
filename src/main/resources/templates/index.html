@@ -7,5 +7,28 @@
 </head>
 <body>
 <h1>WebJava3</h1>
+<form action="">
+	<table>
+	<thead>
+	<tr>
+		<td>名前</td>
+		<td>フリガナ</td>
+		<td>所属部署</td>
+		<td>登録日時</td>
+		<td>更新日時</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td th:each="user : ${users}" th:text="${user.get('name')}" />
+		<td th:each="user : ${users}" th:text="${user.get('kana_name')}" />
+		<td th:each="user : ${users}" th:text="${user.get('menber_division')}" />
+		<td th:each="user : ${users}" th:text="${user.get('reg_time')}" />
+		<td th:each="user : ${users}" th:text="${user.get('upd_time')}" />
+	</tr>
+	</tbody>
+	</table>
+</form>
+
 </body>
 </html>

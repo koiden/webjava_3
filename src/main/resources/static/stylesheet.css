@@ -1,4 +1,14 @@
 body {
 	background-image:url("/images/index-background.jpg");
 	background-repeat:no-repeat;
+	text-align: center;
+}
+
+form {
+
+}
+
+table {
+	border:solid 1px;
+	background-color: white;
 }
