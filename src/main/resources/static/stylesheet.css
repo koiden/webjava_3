@@ -8,7 +8,25 @@ form {
 
 }
 
-table {
-	border:solid 1px;
-	background-color: white;
+table{
+  border-collapse: collapse;
+  border:solid 1px #eee;
+  border-spacing: 0;
+  width: 100%;
 }
+
+table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table td:hover{
+  background-color: #e6fffc;
+}
+
+table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
