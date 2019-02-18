@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="/stylesheet_login.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+<title>WebJava3</title>
+</head>
+<body>
+<div id="login">
+
+      <h1>WebJava3</h1>
+      <form  th:action="@{/login}" method="post" th:object="${listForm}">
+        <h2>Sign in</h2>
+        <span class="fontawesome-user"></span>
+          <input type="text" id="user" placeholder="Userid" >
+
+        <span class="fontawesome-lock"></span>
+          <input type="password" id="pass"  placeholder="Password" >
+
+        <input type="submit" value="Login">
+
+		</form>
+</div>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.webjava3.app.controller;
 
-import java.util.List;
-import java.util.Map;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,25 +9,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.webjava3.app.model.UserForm;
+import com.webjava3.app.model.LoginForm;
 
 @Controller
-public class HomeController {
+public class LoginController {
+
 
 	@Autowired
 	 private  JdbcTemplate jdbcTemplate;
 
-	@RequestMapping( path="/userlist" , method = RequestMethod.GET)
+	@RequestMapping( path="/login" , method = RequestMethod.GET)
 	public ModelAndView show(ModelAndView mav) {
 
-		mav.addObject("userForm", new UserForm());
-
-		List<Map<String,Object>> list;
-		list = jdbcTemplate.queryForList("select * from users");
-		mav.addObject("users", list);
-
-
+		mav.addObject("loginForm", new LoginForm());
 
 		return mav;
+	}
+
+	@RequestMapping( path="/login" , method = RequestMethod.POST)
+	public ModelAndView login(ModelAndView mav,@Valid LoginForm loginform) {
+
+
+		mav.addObject("loginForm", loginform);
+
+		return new ModelAndView("redirect:/login");
 	}
 }
