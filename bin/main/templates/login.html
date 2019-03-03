@@ -7,16 +7,18 @@
 <title>WebJava3</title>
 </head>
 <body>
+
 <div id="login">
 
       <h1>WebJava3</h1>
-      <form  th:action="@{/login}" method="post" th:object="${listForm}">
+      <form  th:action="@{/login}" th:object="${loginForm}" method="post">
         <h2>Sign in</h2>
+
         <span class="fontawesome-user"></span>
-          <input type="text" id="user" placeholder="Userid" >
+          <input type="text" id="user" name="id" th:field="*{login_id}" placeholder="Userid" >
 
         <span class="fontawesome-lock"></span>
-          <input type="password" id="pass"  placeholder="Password" >
+          <input type="password" id="pass" name="pass" th:field="*{login_pass}" placeholder="Password" >
 
         <input type="submit" value="Login">
 

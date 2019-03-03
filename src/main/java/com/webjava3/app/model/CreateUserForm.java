@@ -9,9 +9,14 @@ import lombok.Data;
  *
  */
 @Data
-public class UserForm {
+
+public class CreateUserForm {
 
 	private String user_id;
+
+	private String login_id;
+
+	private String login_pass;
 
 	private String name;
 
